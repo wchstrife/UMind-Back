@@ -8,6 +8,12 @@ public class TestController {
 
     @RequestMapping("/index")
     public String hellotHtml(){
+
         return "/index.html";
+    }
+
+    @RequestMapping("/login")
+    public String Login(){
+        return  "/login";
     }
 }

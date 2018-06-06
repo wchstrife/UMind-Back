@@ -20,15 +20,10 @@ public class UserService {
      * @param password
      * @return
      */
-    public JSONObject findUserByIdAndPassword(String username, String password){
+    public User findUserByIdAndPassword(String username, String password){
         User user = userDao.findByUsernameAndPassword(username, password);
-        if (null != user){
 
-            return UMindUtil.getSuccessResponseJo();
-        }else {
-
-            return UMindUtil.getFailResponseJo();
-        }
+        return user;
     }
 
 }
