@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet"/>
+    <link th:href="@{/bootstrap/css/bootstrap-theme.css}" rel="stylesheet"/>
+</head>
+
+<body background="./img/背景图片.jpg" >
+<br /><br /><br /><br />
+<div
+        style= " text-align: center;background:img/背景图片.jpg; ">
+    <img src="./img/long-red.png" width="250" height="125 "  >
+</div>
+
+<div
+        style="text-align: center; background:url(./img/background.jpg); background-size: 100%">
+    <br /> <br /> <br /> <br />
+
+    <form action="/umind/user/doLogin" method="post" >
+
+        <div th:if="${error}">
+            <div th:text="${error}" style="color:#F00"></div>
+        </div>
+
+        用户名: <input type="text"  name="username" /><br />
+        密&nbsp&nbsp&nbsp码: <input type="password" name="password" /><br />
+        <br/>
+        <input type="submit" name="submit" value="登陆" />
+        <a th:href= "@{/user/register}">注册</a>
+    </form>
+
+    <br /> <br /> <br />
+</div>
+<div
+        style="text-align: right; background-color: silver; color: darkcyan; border: 1px solid gray; margin-top: 2px; padding-left: 10px"
+        id="clock">
+    <script type="text/javascript">
+        setInterval("document.getElementById('clock').innerHTML = 'Umind © ' + new Date().toLocaleString() + ' 星期' + '日一二三四五六'.charAt(new Date().getDay());", 100);
+    </script>
+</div>
+
+</body>
+</html>
